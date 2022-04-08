@@ -4,6 +4,7 @@ import App from './App.vue'
 import router from './router/router.js'
 import store from './store/store.js'
 import axios from "axios";
+import 'dotenv/config'
 
 //Boostrap Vue
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
@@ -13,14 +14,14 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 // Firebase config
 import firebase from 'firebase/app'
 const firebaseConfig = {
-  apiKey: "AIzaSyD_K-7RJmt--agWGzTXB5oUZRperx1VymE",
-  authDomain: "aboutheadproject.firebaseapp.com",
-  databaseURL: "https://aboutheadproject.firebaseio.com",
-  projectId: "aboutheadproject",
-  storageBucket: "aboutheadproject.appspot.com",
-  messagingSenderId: "964288607362",
-  appId: "1:964288607362:web:0c1b21d2ece2add484709b",
-  measurementId: "G-ZDP315JF2G"
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  databaseURL: process.env.DATABASE_URL,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID
 }
 firebase.initializeApp(firebaseConfig);
 
